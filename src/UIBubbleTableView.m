@@ -210,7 +210,10 @@
         UIBubbleHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         NSBubbleData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:0];
         
-        if (cell == nil) cell = [[UIBubbleHeaderTableViewCell alloc] init];
+        if (cell == nil) {
+          cell = [[UIBubbleHeaderTableViewCell alloc] init];
+          cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        }
 
         cell.date = data.date;
        
